@@ -1,7 +1,18 @@
+
 package com.kiet.Library.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bookId;
+
     private String title;
     private String author;
     private String category;
@@ -10,7 +21,8 @@ public class Book {
 
     public Book() {}
 
-    public Book(int bookId, String title, String author, String category, int publicationYear, boolean available) {
+    public Book(int bookId, String title, String author, String category,
+                int publicationYear, boolean available) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
@@ -21,14 +33,23 @@ public class Book {
 
     public int getBookId() { return bookId; }
     public void setBookId(int bookId) { this.bookId = bookId; }
+
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
+
     public String getAuthor() { return author; }
     public void setAuthor(String author) { this.author = author; }
+
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }
+
     public int getPublicationYear() { return publicationYear; }
-    public void setPublicationYear(int publicationYear) { this.publicationYear = publicationYear; }
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
     public boolean isAvailable() { return available; }
-    public void setAvailable(boolean available) { this.available = available; }
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 }
